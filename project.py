@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request, redirect,jsonify, url_for, flash
-app = Flask(__name__)
-
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem
@@ -9,6 +7,8 @@ from database_setup import Base, Restaurant, MenuItem
 from flask import session as login_session
 import random
 import string
+
+app = Flask(__name__)
 
 #Connect to Database and create database session
 engine = create_engine('sqlite:///restaurantmenu.db')
